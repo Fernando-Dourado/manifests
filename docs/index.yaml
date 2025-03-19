@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  nginx:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-19T17:01:39.094797-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 6a9665b114fcb7c7d53ca2386f73b4a29eae02ecd5a568eff1a0d5841c89fe39
+    name: nginx
+    type: application
+    urls:
+    - https://fernando-dourado.github.io/manifests/nginx-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-19T17:01:39.093936-03:00"
