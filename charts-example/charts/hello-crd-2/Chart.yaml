@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hello-crd-2
+description: A Helm chart with multiple CRDs from template folder
+type: application
+version: 0.0.1
+appVersion: 1.0.0
