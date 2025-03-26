@@ -1,9 +1,31 @@
 apiVersion: v1
 entries:
+  hello-crd-1:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-26T16:51:51.561484-03:00"
+    description: A Helm chart with multiple CRDs
+    digest: a8d7df790b36ce9b8ae15edc03b2eccd4b92fcfa288b8ac27e085956004b082c
+    name: hello-crd-1
+    type: application
+    urls:
+    - https://fernando-dourado.github.io/manifests/hello-crd-1-0.1.0.tgz
+    version: 0.1.0
+  hello-crd-2:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-26T16:51:51.561893-03:00"
+    description: A Helm chart with multiple CRDs from template folder
+    digest: 6145be68181334174ae7f7586d14d4b056978a57829bfdf6df9ff99cc024346d
+    name: hello-crd-2
+    type: application
+    urls:
+    - https://fernando-dourado.github.io/manifests/hello-crd-2-0.0.1.tgz
+    version: 0.0.1
   nginx:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-03-19T17:01:39.094797-03:00"
+    created: "2025-03-26T16:51:51.562583-03:00"
     description: A Helm chart for Kubernetes
     digest: 6a9665b114fcb7c7d53ca2386f73b4a29eae02ecd5a568eff1a0d5841c89fe39
     name: nginx
@@ -11,4 +33,4 @@ entries:
     urls:
     - https://fernando-dourado.github.io/manifests/nginx-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-19T17:01:39.093936-03:00"
+generated: "2025-03-26T16:51:51.560486-03:00"
