@@ -1,0 +1,7 @@
+# Configuração para o CRD1
+crd1:
+  value: "Valor para CRD1"
+
+# Configuração para o CRD2
+crd2:
+  data: "Valor para CRD2"
