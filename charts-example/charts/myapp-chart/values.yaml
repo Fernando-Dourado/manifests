@@ -1,0 +1,4 @@
+myapp:
+  name: myapp-instance
+  image: nginx:latest
+  replicas: 2
