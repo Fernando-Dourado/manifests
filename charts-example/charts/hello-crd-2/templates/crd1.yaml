@@ -3,9 +3,10 @@ kind: CustomResourceDefinition
 metadata:
   name: crd1s.example.com
   annotations:
-    app.kubernetes.io/managed-by: Helm
     meta.helm.sh/release-name: release-c8ca1b
     meta.helm.sh/release-namespace: default
+  labels:
+    app.kubernetes.io/managed-by: Helm
 spec:
   group: example.com
   names:
