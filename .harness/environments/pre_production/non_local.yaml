@@ -2,6 +2,5 @@ environment:
   name: non-local
   identifier: non_local
   tags: {}
-  type: PreProduction
   orgIdentifier: default
   projectIdentifier: One
