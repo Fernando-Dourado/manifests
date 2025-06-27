@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      volumes:
+        - name: certs
+          secret:
+            secretName: nginx-certificates
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 443
+          volumeMounts:
+            - name: certs
+              mountPath: /etc/nginx/certs
+              readOnly: true
+            - name: nginx-config
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
