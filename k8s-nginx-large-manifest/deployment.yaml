@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-large-deployment
   namespace: default
 spec:
   replicas: 1
@@ -16,10 +16,10 @@ spec:
       volumes:
         - name: certs
           secret:
-            secretName: nginx-certificates
-        - name: nginx-config
+            secretName: nginx-large-certificates
+        - name: nginx-large-config
           configMap:
-            name: nginx-config
+            name: nginx-large-config
       containers:
         - name: nginx
           image: nginx:latest
@@ -29,6 +29,6 @@ spec:
             - name: certs
               mountPath: /etc/nginx/certs
               readOnly: true
-            - name: nginx-config
+            - name: nginx-large-config
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
