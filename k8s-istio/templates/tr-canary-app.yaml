@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+        - name: {{ .Values.name }}
+          image: buoyantio/bb:v0.0.6
+          args:
+            - terminus
+            - "--h1-server-port=6060"
+            - "--response-text={{ .Values.responseText }}"
+          ports:
+            - containerPort: 6060
