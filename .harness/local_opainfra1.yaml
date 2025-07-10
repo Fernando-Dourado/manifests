@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: opa-infra-1
+  identifier: opainfra1
+  orgIdentifier: default
+  projectIdentifier: Pipeline_22320
+  environmentRef: opacase
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: account.Local
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
