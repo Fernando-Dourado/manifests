@@ -1,0 +1,6 @@
+environment:
+  name: statically linked
+  identifier: statically_linked
+  orgIdentifier: default
+  projectIdentifier: OPA_Validation
+  type: PreProduction
