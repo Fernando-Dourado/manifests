@@ -1,0 +1,6 @@
+environment:
+  name: same repo as pipeline
+  identifier: same_repo_as_pipeline
+  orgIdentifier: default
+  projectIdentifier: OPA_Validation
+  type: Production
