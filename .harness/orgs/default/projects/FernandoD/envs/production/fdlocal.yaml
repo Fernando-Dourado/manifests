@@ -1,0 +1,6 @@
+environment:
+  name: fd-local
+  identifier: fdlocal
+  orgIdentifier: default
+  projectIdentifier: FernandoD
+  type: Production
