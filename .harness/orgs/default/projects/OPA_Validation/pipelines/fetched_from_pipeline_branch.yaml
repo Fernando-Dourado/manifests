@@ -17,6 +17,7 @@ pipeline:
             serviceInputs: <+input>
           environment:
             environmentRef: same_repo_as_pipeline
+            gitBranch: another-branch
             deployToAll: false
             infrastructureDefinitions: <+input>
           execution:
