@@ -19,7 +19,13 @@ pipeline:
             environmentRef: same_repo_as_pipeline
             gitBranch: another-branch
             deployToAll: false
-            infrastructureDefinitions: <+input>
+            infrastructureDefinitions:
+              - identifier: inlineinfra
+                inputs:
+                  identifier: inlineinfra
+                  type: KubernetesDirect
+                  spec:
+                    connectorRef: <+input>
           execution:
             steps:
               - step:
