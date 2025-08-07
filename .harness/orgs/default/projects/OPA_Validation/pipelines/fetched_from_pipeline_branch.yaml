@@ -16,11 +16,15 @@ pipeline:
             serviceRef: <+input>
             serviceInputs: <+input>
           environment:
-            environmentRef: <+input>
+            environmentRef: same_repo_as_pipeline
             deployToAll: false
-            environmentInputs: <+input>
-            serviceOverrideInputs: <+input>
-            infrastructureDefinitions: <+input>
+            infrastructureDefinitions:
+              - identifier: inlineinfra
+                inputs:
+                  identifier: inlineinfra
+                  type: KubernetesDirect
+                  spec:
+                    connectorRef: <+input>
           execution:
             steps:
               - step:
