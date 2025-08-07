@@ -16,16 +16,11 @@ pipeline:
             serviceRef: <+input>
             serviceInputs: <+input>
           environment:
-            environmentRef: same_repo_as_pipeline
-            gitBranch: another-branch
+            environmentRef: <+input>
             deployToAll: false
-            infrastructureDefinitions:
-              - identifier: inlineinfra
-                inputs:
-                  identifier: inlineinfra
-                  type: KubernetesDirect
-                  spec:
-                    connectorRef: <+input>
+            environmentInputs: <+input>
+            serviceOverrideInputs: <+input>
+            infrastructureDefinitions: <+input>
           execution:
             steps:
               - step:
