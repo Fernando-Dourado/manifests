@@ -1,0 +1,21 @@
+service: fd-hello-sls-v4
+
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: production
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /hello
+          method: get
+
+extensions:
+  serverless-offline:
+    enabled: true
