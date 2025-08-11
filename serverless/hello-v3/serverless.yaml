@@ -16,5 +16,5 @@ functions:
           path: hello
           method: get
 
-plugins:
-  - serverless-offline
+# plugins:
+#   - serverless-offline
