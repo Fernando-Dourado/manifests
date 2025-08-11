@@ -16,6 +16,6 @@ functions:
           path: /hello
           method: get
 
-extensions:
-  serverless-offline:
-    enabled: true
+# extensions:
+#   serverless-offline:
+#     enabled: true
