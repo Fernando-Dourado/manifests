@@ -1,0 +1,6 @@
+environment:
+  name: remote-env
+  identifier: remoteenv
+  orgIdentifier: default
+  projectIdentifier: FernandoD
+  type: Production
