@@ -1,6 +1,6 @@
 service: fd-hello-sls-v4
 
-frameworkVersion: '4.18.0'
+frameworkVersion: '4.17.0'
 
 provider:
   name: aws
