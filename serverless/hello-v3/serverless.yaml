@@ -7,6 +7,9 @@ provider:
   runtime: nodejs18.x
   region: us-east-1
   stage: production
+  deploymentBucket:
+    name: fd-hello-sls-v3-deployment-bucket
+    serverSideEncryption: AES256
 
 functions:
   hello:
