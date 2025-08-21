@@ -1,3 +1,2 @@
-responseText: <+pipeline.variables.responseText>
-trafficGeneratorSleepTimer: <+pipeline.variables.trafficGeneratorSleepTimer>
+responseText: "Hi"
 name: <+stage.variables.resourceNamePrefix>
