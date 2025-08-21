@@ -1,6 +1,6 @@
 module.exports.hello = async () => {
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: "Hello from Serverless v4!" }),
+    body: JSON.stringify({ message: "Hello from Serverless v4! release 1" }),
   };
 };
