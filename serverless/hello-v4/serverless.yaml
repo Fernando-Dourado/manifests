@@ -1,4 +1,4 @@
-service: fd-hello-sls-v4
+service: fd-hello-sls
 
 frameworkVersion: '4.17.0'
 
