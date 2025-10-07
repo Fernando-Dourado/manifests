@@ -20,23 +20,23 @@ spec:
           ports:
             - containerPort: 443
           volumeMounts:
-            - name: nginx-config
+            - name: nginx-sanitize-certs-config
               mountPath: /etc/nginx/conf.d
-            - name: nginx-tls
+            - name: nginx-sanitize-certs-tls
               mountPath: /etc/nginx/tls
               readOnly: true
       volumes:
-        - name: nginx-config
+        - name: nginx-sanitize-certs-config
           configMap:
-            name: nginx-config
-        - name: nginx-tls
+            name: nginx-sanitize-certs-config
+        - name: nginx-sanitize-certs-tls
           secret:
-            secretName: nginx-tls
+            secretName: nginx-sanitize-certs-tls
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx-sanitize-certs-service
 spec:
   selector:
     app: nginx

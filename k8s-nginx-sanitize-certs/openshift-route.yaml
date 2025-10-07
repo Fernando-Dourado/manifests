@@ -1,7 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name:  nginx-large-route
+  name:  nginx-sanitize-certs-route
   annotations:
     haproxy.router.openshift.io/timeout: 90s
   namespace: default
@@ -10,7 +10,7 @@ spec:
   path: /
   to:
     kind: Service
-    name: nginx-large-service
+    name: nginx-sanitize-certs-service
     weight: 100
   port:
     targetPort: http

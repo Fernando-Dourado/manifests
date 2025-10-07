@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: nginx-tls
+  name: nginx-sanitize-certs-tls
 type: Opaque
 stringData:
   tls.crt: |
