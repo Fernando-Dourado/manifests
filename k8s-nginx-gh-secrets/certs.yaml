@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nginx-sanitize-certs-tls
+type: Opaque
+stringData:
+  tls.crt: ${{ secrets.TLS_CERT_PUBLIC }}
+  tls.key: ${{ secrets.TLS_CERT_PRIVATE }}
