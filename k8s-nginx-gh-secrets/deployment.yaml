@@ -32,17 +32,3 @@ spec:
         - name: nginx-sanitize-certs-tls
           secret:
             secretName: nginx-sanitize-certs-tls
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-sanitize-certs-service
-spec:
-  selector:
-    app: nginx
-  ports:
-    - name: https
-      port: 443
-      targetPort: 443
-      protocol: TCP
-  type: NodePort
