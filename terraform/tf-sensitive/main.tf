@@ -72,7 +72,7 @@ output "api_key_length" {
 # Exemplo: Usando nonsensitive() para expor dados quando necessário
 output "db_username_from_sensitive" {
   description = "Extraindo valor não sensível de um contexto sensível"
-  value       = nonsensitive(local.app_config.username)
+  value       = local.app_config.username
 }
 
 # Recurso de exemplo usando valores sensíveis
