@@ -4,7 +4,6 @@ metadata:
   name:  nginx-sanitize-certs-route
   annotations:
     haproxy.router.openshift.io/timeout: 90s
-  namespace: default
 spec:
   host: localhost.example.com
   path: /
