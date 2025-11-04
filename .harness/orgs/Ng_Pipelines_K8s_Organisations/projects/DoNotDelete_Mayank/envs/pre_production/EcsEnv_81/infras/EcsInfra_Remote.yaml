@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: EcsInfra Remote
+  identifier: EcsInfra_Remote
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  projectIdentifier: DoNotDelete_Mayank
+  environmentRef: EcsEnv_81
+  deploymentType: ECS
+  type: ECS
+  spec:
+    connectorRef: <+input>
+    region: <+input>
+    cluster: <+input>
+  allowSimultaneousDeployments: false
