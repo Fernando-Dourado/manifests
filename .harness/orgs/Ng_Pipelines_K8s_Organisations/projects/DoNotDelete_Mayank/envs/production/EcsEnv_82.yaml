@@ -1,0 +1,6 @@
+environment:
+  name: EcsEnv_82
+  identifier: EcsEnv_82
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  projectIdentifier: DoNotDelete_Mayank
+  type: Production
