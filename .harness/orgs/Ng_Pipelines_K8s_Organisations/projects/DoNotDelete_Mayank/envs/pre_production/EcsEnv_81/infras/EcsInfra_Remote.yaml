@@ -7,7 +7,7 @@ infrastructureDefinition:
   deploymentType: ECS
   type: ECS
   spec:
-    connectorRef: <+input>
-    region: <+input>
-    cluster: <+input>
-  allowSimultaneousDeployments: false
+    connectorRef: org.ECRConnectorForAutomationTest
+    region: us-east-1
+    cluster: ecs-cluster-3
+  allowSimultaneousDeployments: true
