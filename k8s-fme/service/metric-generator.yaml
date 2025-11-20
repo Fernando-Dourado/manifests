@@ -16,7 +16,7 @@ service:
                   connectorRef: FD_Manifests
                   gitFetchType: Branch
                   paths:
-                    - .harness/manifests/templates
+                    - k8s-fme/manifests/templates
                   branch: main
               skipResourceVersioning: true
               enableDeclarativeRollback: false
