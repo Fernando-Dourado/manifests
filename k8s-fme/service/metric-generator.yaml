@@ -63,18 +63,7 @@ service:
           required: false
           value: http://grafana-k8s-monitoring-alloy-receiver.monitoring:4318/v1/metrics
       artifacts:
-        primary:
-          primaryArtifactRef: <+input>
-          sources:
-            - identifier: harness
-              type: Har
-              spec:
-                registryRef: fme-docker
-                type: docker
-                spec:
-                  imagePath: <+serviceVariables.name>
-                  tag: <+serviceVariables.tag>
-                  digest: ""
+        primary: {}
     type: Kubernetes
   tags:
     aws-stage: ""
