@@ -63,7 +63,16 @@ service:
           required: false
           value: http://grafana-k8s-monitoring-alloy-receiver.monitoring:4318/v1/metrics
       artifacts:
-        primary: {}
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: Public_Docker_Hub
+                imagePath: library/nginx
+                tag: <+input>
+                digest: ""
+              identifier: nginx
+              type: DockerRegistry
     type: Kubernetes
   tags:
     aws-stage: ""
