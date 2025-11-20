@@ -1,0 +1,9 @@
+# Harness GO templating values file
+# This file takes the values from the Harness Overrides V2 feature on runtime
+service: "<+serviceVariables.name>"
+image: "<+artifacts.primary.image>"
+cpuReq: "<+serviceVariables.cpu_req>"
+cpuLim: "<+serviceVariables.cpu_lim>"
+memReq: "<+serviceVariables.mem_req>"
+memLim: "<+serviceVariables.mem_lim>"
+otelCollector: "<+serviceVariables.otel_collector>"

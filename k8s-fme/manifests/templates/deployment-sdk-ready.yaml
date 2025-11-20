@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.service }}-sdk-ready
+  labels:
+    app: {{ .Values.service }}-sdk-ready
+    name: {{ .Values.service }}-sdk-ready
+    owner: platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.service }}-sdk-ready
+      name: {{ .Values.service }}-sdk-ready
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.service }}-sdk-ready
+        name: {{ .Values.service }}-sdk-ready
+        owner: platform
+    spec:
+      containers:
+      - name: {{ .Values.service }}-sdk-ready
+        image: {{ .Values.image }}
+        command: ['node', 'sdk-ready-latency/sdk-ready-latency.js']
+        resources:
+          limits:
+            cpu: {{ .Values.cpuLim }}
+            memory: {{ .Values.memLim }}
+          requests:
+            cpu: {{ .Values.cpuReq }}
+            memory: {{ .Values.memReq }}
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: SPLIT_SDK_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.service }}
+              key: SPLIT_SDK_KEY
+        - name: OTEL_COLLECTOR
+          value: {{ .Values.otelCollector }}
+      nodeSelector:
+        node.kubernetes.io/node-type: default
+        kubernetes.io/arch: arm64
+      imagePullSecrets:
+        - name: docker-registry

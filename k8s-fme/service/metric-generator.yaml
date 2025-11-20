@@ -1,0 +1,85 @@
+service:
+  name: otel-metric-generator
+  identifier: otelmetricgenerator
+  orgIdentifier: default
+  projectIdentifier: FernandoD
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: template
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: <+fmegithub<+serviceVariables.delegate.replace("-", "")>>
+                  gitFetchType: Branch
+                  paths:
+                    - .harness/manifests/templates
+                  repoName: otel-metric-generator
+                  branch: main
+              skipResourceVersioning: true
+              enableDeclarativeRollback: false
+      variables:
+        - name: name
+          type: String
+          description: Service name for resource identification
+          required: false
+          value: otel-metric-generator
+        - name: tag
+          type: String
+          default: <+<+expression.isResolved(<+trigger.payload.head_commit.id>)>?<+trigger.payload.head_commit.id>:<+trigger.payload.artifacts[0].buildNumber>>
+          description: Deployment version tag
+          required: false
+          value: <+input>.default(<+<+expression.isResolved(<+trigger.payload.head_commit.id>)>?<+trigger.payload.head_commit.id>:<+trigger.payload.artifacts[0].buildNumber>>)
+        - name: namespace
+          type: String
+          description: K8s namespace
+          required: false
+          value: main
+        - name: cpu_req
+          type: String
+          description: CPU request
+          required: false
+          value: 1000m
+        - name: cpu_lim
+          type: String
+          description: CPU limit
+          required: false
+          value: 1000m
+        - name: mem_req
+          type: String
+          description: Memory request
+          required: false
+          value: 512Mi
+        - name: mem_lim
+          type: String
+          description: Memory limit
+          required: false
+          value: 512Mi
+        - name: otel_collector
+          type: String
+          description: Open Telemetry Collector
+          required: false
+          value: http://grafana-k8s-monitoring-alloy-receiver.monitoring:4318/v1/metrics
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - identifier: harness
+              type: Har
+              spec:
+                registryRef: fme-docker
+                type: docker
+                spec:
+                  imagePath: <+serviceVariables.name>
+                  tag: <+serviceVariables.tag>
+                  digest: ""
+    type: Kubernetes
+  tags:
+    aws-stage: ""
+    use1-stage-1: ""
+    use1-prod-1: ""
+    namespace: main
+    promote: enabled
