@@ -13,11 +13,10 @@ service:
               store:
                 type: Github
                 spec:
-                  connectorRef: <+fmegithub<+serviceVariables.delegate.replace("-", "")>>
+                  connectorRef: FD_Manifests
                   gitFetchType: Branch
                   paths:
                     - .harness/manifests/templates
-                  repoName: otel-metric-generator
                   branch: main
               skipResourceVersioning: true
               enableDeclarativeRollback: false
