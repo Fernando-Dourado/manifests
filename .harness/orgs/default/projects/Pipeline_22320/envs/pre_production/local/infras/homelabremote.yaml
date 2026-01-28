@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: homelab-remote
+  identifier: homelabremote
+  orgIdentifier: default
+  projectIdentifier: Pipeline_22320
+  environmentRef: local
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: <+input>
+    namespace: <+input>
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
