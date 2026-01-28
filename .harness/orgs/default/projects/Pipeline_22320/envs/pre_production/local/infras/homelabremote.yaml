@@ -7,7 +7,7 @@ infrastructureDefinition:
   deploymentType: Kubernetes
   type: KubernetesDirect
   spec:
-    connectorRef: <+input>
-    namespace: <+input>
+    connectorRef: account.Local
+    namespace: default
     releaseName: release-<+INFRA_KEY_SHORT_ID>
   allowSimultaneousDeployments: false
