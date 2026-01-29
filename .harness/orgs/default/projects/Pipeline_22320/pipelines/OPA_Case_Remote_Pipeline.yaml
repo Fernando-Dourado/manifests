@@ -33,11 +33,10 @@ pipeline:
                   spec:
                     pruningEnabled: false
           environment:
-            environmentRef: <+input>
+            environmentRef: opacase
             deployToAll: false
-            environmentInputs: <+input>
-            serviceOverrideInputs: <+input>
-            infrastructureDefinitions: <+input>
+            infrastructureDefinitions:
+              - identifier: opainfra2
         tags: {}
         failureStrategies:
           - onFailure:
