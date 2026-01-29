@@ -8,7 +8,7 @@ pipeline:
     - stage:
         name: O
         identifier: O
-        description: abc-def
+        description: abc-defxxx
         type: Deployment
         spec:
           deploymentType: Kubernetes
