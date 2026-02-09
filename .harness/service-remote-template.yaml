@@ -1,0 +1,21 @@
+service:
+  name: service-remote-template
+  identifier: service_remote_template
+  orgIdentifier: default
+  projectIdentifier: FernandoD
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: m1
+            type: K8sManifest
+            spec:
+              store:
+                type: Harness
+                spec:
+                  files:
+                    - /nginx.local
+              optionalValuesYaml: false
+              skipResourceVersioning: false
+              enableDeclarativeRollback: true
+    type: Kubernetes
