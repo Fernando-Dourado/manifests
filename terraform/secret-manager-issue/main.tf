@@ -16,7 +16,7 @@ provider "harness" {
 resource "harness_platform_service" "service_remote_template" {
   identifier  = "var.service_id"
   name        = "var.service_name"
-  org_id      = "default"
+  org_id      = "var.org_id"
   project_id  = "FernandoD"
   git_details {
     branch         = "main"
