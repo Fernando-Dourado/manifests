@@ -26,3 +26,4 @@ resource "harness_platform_service" "service_remote_template" {
     store_type     = "REMOTE"
     repo_name      = "manifests"
   }
+}
