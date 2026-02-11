@@ -14,12 +14,12 @@ provider "harness" {
 }
 
 resource "harness_platform_service" "service_remote_template" {
-  identifier  = "service_remote_template"
-  name        = "service-remote-template"
+  identifier  = "var.service_id"
+  name        = "var.service_name"
   org_id      = "default"
   project_id  = "FernandoD"
   git_details {
-    branch_name    = "main"
+    branch         = "main"
     commit_message = "tf apply service creation"
     file_path      = ".harness/service-remote-template.yaml"
     connector_ref  = "FD_Manifests"
