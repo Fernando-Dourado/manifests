@@ -1,6 +1,6 @@
 service:
-  name: service-remote-template
-  identifier: service_remote_template
+  name: <<SERVICE_NAME>>
+  identifier: <<SERVICE_ID>>
   orgIdentifier: default
   projectIdentifier: FernandoD
   serviceDefinition:
