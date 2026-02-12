@@ -11,11 +11,14 @@ service:
             type: K8sManifest
             spec:
               store:
-                type: Harness
+                type: Github
                 spec:
-                  files:
-                    - /nginx.local
-              optionalValuesYaml: false
+                  connectorRef: FD_Manifests
+                  gitFetchType: Branch
+                  paths:
+                    - k8s/manifest/nginx
+                  branch: main
               skipResourceVersioning: false
-              enableDeclarativeRollback: true
+              enableDeclarativeRollback: false
+              optionalValuesYaml: false
     type: Kubernetes
