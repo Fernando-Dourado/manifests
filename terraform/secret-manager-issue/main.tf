@@ -27,4 +27,3 @@ resource "harness_platform_connector_github" "ghFD_Manifests" {
     }
   }
 }
-}
