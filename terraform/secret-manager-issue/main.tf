@@ -13,6 +13,19 @@ provider "harness" {
   platform_api_key = var.harness_api_key
 }
 
+resource "harness_platform_connector_github" "ghFD_Manifests" {
+  identifier       = "ghFD_Manifests"
+  name             = "ghFD_Manifests"
+  url              = "https://github.com/Fernando-Dourado/manifests"
+  connection_type  = "Repo"
+  credentials {
+    http {
+      username  = "Fernando-Dourado"
+      token_ref = "account.GH_QA_Token_on_Fernando-Dourado"
+    }
+  }
+}
+
 resource "harness_platform_service" "service_remote_template" {
   identifier  = "service_remote_template"
   name        = "service-remote-template"
@@ -23,7 +36,7 @@ resource "harness_platform_service" "service_remote_template" {
     branch         = "main"
     commit_message = "tf apply service creation"
     file_path      = ".harness/service-remote-template.yaml"
-    connector_ref  = "FD_Manifests"
+    connector_ref  = "ghFD_Manifests"
     store_type     = "REMOTE"
     repo_name      = "manifests"
   }
