@@ -5,6 +5,15 @@ terraform {
       source  = "harness/harness"
     }
   }
+  backend "s3" {
+    bucket = "fd-tf-state-321"
+    key    = "terraform.tfstate"
+    region = "us-east-2"
+  }
+}
+
+provider "aws" {
+  region = "us-east-2"
 }
 
 provider "harness" {
