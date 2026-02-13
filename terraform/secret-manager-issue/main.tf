@@ -16,6 +16,8 @@ provider "harness" {
 resource "harness_platform_connector_github" "ghFD_Manifests" {
   identifier       = "ghFD_Manifests_123"
   name             = "ghFD_Manifests"
+  org_id      = var.org_id
+  project_id  = var.project_id
   url              = "https://github.com/Fernando-Dourado/manifests"
   connection_type  = "Repo"
   credentials {
