@@ -26,6 +26,9 @@ resource "harness_platform_connector_github" "ghFD_Manifests" {
       token_ref = "gh_fd_pat"
     }
   }
+  api_authentication {
+    token_ref = "gh_fd_pat"
+  }
 }
 
 resource "harness_platform_service" "service_remote_template" {
