@@ -20,7 +20,7 @@ resource "harness_platform_connector_github" "ghFD_Manifests" {
   project_id  = var.project_id
   url              = "https://github.com/Fernando-Dourado/manifests"
   connection_type  = "Repo"
-  delegate_selectors = ["aws"]
+  delegate_selectors = ["zeaak-eks-cdplay-del-qa"]
   credentials {
     http {
       username  = "Fernando-Dourado"
