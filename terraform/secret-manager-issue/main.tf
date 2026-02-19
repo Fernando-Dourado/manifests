@@ -33,11 +33,11 @@ resource "harness_platform_connector_github" "ghFD_Manifests" {
   credentials {
     http {
       username  = "Fernando-Dourado"
-      token_ref = "gh_fd_pat"
+      token_ref = "GH_PAT_for_FernandoD_on_AWS"
     }
   }
   api_authentication {
-    token_ref = "gh_fd_pat"
+    token_ref = "GH_PAT_for_FernandoD_on_AWS"
   }
 }
 
