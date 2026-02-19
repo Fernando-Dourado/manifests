@@ -13,7 +13,7 @@ service:
               store:
                 type: Github
                 spec:
-                  connectorRef: FD_Manifests
+                  connectorRef: ghFD_Manifests_123
                   gitFetchType: Branch
                   paths:
                     - k8s/manifest/nginx
