@@ -17,7 +17,7 @@ service:
                   gitFetchType: Branch
                   paths:
                     - k8s/manifest/nginx
-                  branch: main
+                  branch: fd-devspace
               skipResourceVersioning: false
               enableDeclarativeRollback: false
               optionalValuesYaml: false
