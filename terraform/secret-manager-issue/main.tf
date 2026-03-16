@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket = "fd-tf-state-321"
-    key    = "terraform.tfstate"
+    key    = "fd-devspace-terraform.tfstate"
     region = "us-east-2"
   }
 }
@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 provider "harness" {
-  endpoint         = "https://qa.harness.io"
+  endpoint         = "https://fernandod.pr2.harness.io"
   account_id       = var.harness_account_id
   platform_api_key = var.harness_api_key
 }
@@ -25,19 +25,19 @@ provider "harness" {
 resource "harness_platform_connector_github" "ghFD_Manifests" {
   identifier       = "ghFD_Manifests_123"
   name             = "ghFD_Manifests"
-  org_id      = var.org_id
-  project_id  = var.project_id
+  org_id           = var.org_id
+  project_id       = var.project_id
   url              = "https://github.com/Fernando-Dourado/manifests"
   connection_type  = "Repo"
-  delegate_selectors = ["zeaak-eks-cdplay-del-qa"]
+  delegate_selectors = ["fd-devspace-cd-play"]
   credentials {
     http {
       username  = "Fernando-Dourado"
-      token_ref = "GH_PAT_for_FernandoD_on_AWS"
+      token_ref = "GH_PAT_for_FernandoD_on_AWS_from_DEVSPACE"
     }
   }
   api_authentication {
-    token_ref = "GH_PAT_for_FernandoD_on_AWS"
+    token_ref = "GH_PAT_for_FernandoD_on_AWS_from_DEVSPACE"
   }
 }
 
