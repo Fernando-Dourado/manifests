@@ -48,7 +48,7 @@ resource "harness_platform_service" "service_remote_template" {
   project_id  = var.project_id
   import_from_git = "true"
   git_details {
-    branch         = "main"
+    branch         = "fd-devspace"
     commit_message = "tf apply service creation"
     file_path      = ".harness/service-remote-template.yaml"
     connector_ref  = "ghFD_Manifests_123"
