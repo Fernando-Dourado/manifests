@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Exemplo simples - bucket S3 com nome configurável"
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: "Nome do bucket S3"
+    Default: "meu-bucket-exemplo-12345"
+
+Resources:
+  MeuBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      Tags:
+        - Key: Ambiente
+          Value: Desenvolvimento
+
+Outputs:
+  BucketArn:
+    Description: "ARN do bucket criado"
+    Value: !GetAtt MeuBucket.Arn
+  BucketName:
+    Description: "Nome do bucket criado"
+    Value: !Ref MeuBucket
