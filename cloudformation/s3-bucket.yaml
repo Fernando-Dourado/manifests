@@ -5,7 +5,7 @@ Parameters:
   BucketName:
     Type: String
     Description: "Nome do bucket S3"
-    Default: "meu-bucket-exemplo-12345"
+    Default: "meu-bucket-exemplo-123456-qazplmnko"
 
 Resources:
   MeuBucket:
