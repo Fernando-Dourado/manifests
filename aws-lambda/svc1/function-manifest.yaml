@@ -1,0 +1,4 @@
+functionName: "<+serviceVariables.functionName>"
+handler: "index.handler"
+role: "<+serviceVariables.roleARN>"
+runtime: "nodejs16.x"
