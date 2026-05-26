@@ -1,0 +1,6 @@
+{
+   "runtime": "java17",
+   "functionName": "vl_lambda_unif_test_1",
+   "handler": "handler.hello",
+   "role": "arn:aws:iam::806630305776:role/service-role/vl-test-1-role-fry36t3x"
+}
