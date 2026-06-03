@@ -1,6 +1,6 @@
 {
-functionName: "fd-hello-unified"
-handler: "index.handler"
-role: "arn:aws:iam::806630305776:role/lambda-execution-role"
-runtime: "nodejs16.x"
+"functionName": "fd-hello-unified"
+"handler": "index.handler"
+"role": "arn:aws:iam::806630305776:role/lambda-execution-role"
+"runtime": "nodejs16.x"
 }
