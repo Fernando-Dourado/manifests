@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+  annotations:
+    configmap-hash: "v1"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 8080
+        env:
+        - name: TARGET_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: TARGET_PORT
