@@ -1,0 +1,5 @@
+service:
+  name: custom-svc-deployment
+  identifier: customsvcdeployment
+  orgIdentifier: default
+  projectIdentifier: Pipeline_22320
