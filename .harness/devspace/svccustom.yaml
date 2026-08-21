@@ -1,0 +1,11 @@
+service:
+  name: svc-custom
+  identifier: svccustom
+  orgIdentifier: default
+  projectIdentifier: FernandoD
+  serviceDefinition:
+    spec:
+      customDeploymentRef:
+        templateRef: Dummy_Deployment
+        versionLabel: v1
+    type: CustomDeployment
