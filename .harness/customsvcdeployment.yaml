@@ -3,3 +3,9 @@ service:
   identifier: customsvcdeployment
   orgIdentifier: default
   projectIdentifier: Pipeline_22320
+  serviceDefinition:
+    spec:
+      customDeploymentRef:
+        templateRef: MyCustomDeployment
+        versionLabel: v1
+    type: CustomDeployment
