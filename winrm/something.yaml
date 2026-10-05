@@ -1,0 +1,3 @@
+root:
+  path: "C:\Users\Adminstrator\<+env.name>"
+  sequence: <+pipeline.sequenceIdentifier>
